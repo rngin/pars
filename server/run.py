@@ -8,4 +8,5 @@ from database import check
 
 # check database connection
 check.connect()
+check.select()
 
