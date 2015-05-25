@@ -38,7 +38,7 @@ def select():
     with con:
 
         cur = con.cursor()
-        cur.execute("SELECT * FROM opec_basket_price")
+        cur.execute("SELECT * FROM opec_basket_price;")
 
         rows = cur.fetchall()
 
