@@ -29,3 +29,17 @@ def connect():
 
         if con:
             con.close()
+
+def select():
+
+    con = _mysql.connect('localhost', 'testuser', 'test623', 'testdb');
+
+    with con:
+
+        cur = con.cursor()
+        cur.execute("SELECT * FROM opec_backet_price")
+
+        rows = cur.fetchall()
+
+        for row in rows:
+            print row
