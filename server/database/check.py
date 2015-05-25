@@ -4,7 +4,7 @@ __author__ = 'mohsen'
 
 import _mysql
 import sys
-from ..configs import data
+from configs import data
 
 
 # MYSQL DATABASE CHECK
