@@ -8,7 +8,7 @@ import _mysql
 import sys
 
 try:
-    con = _mysql.connect('localhost', 'root', 'ejZKqMzM2F3tcoTigqXhfGGWg926Nc4u9g', 'pars')
+    con = _mysql.connect('localhost', 'root', 'ejZKqMzM2F3tcoTigqXhfGGWg926Nc4u9g', 'dev1_pars')
 
     con.query("SELECT VERSION()")
     result = con.use_result()
