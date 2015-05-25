@@ -4,30 +4,10 @@ __author__ = 'mohsen'
 
 print "SERVER : [OK] starting server.."
 
-import _mysql
-import sys
-from configs import data
+from database import check
+
+# check database connection
+check.connect()
 
 
-# MYSQL DATABASE CHECK
-try:
-    con = _mysql.connect(data.HOST, data.USER_NAME, data.PASSWORD, data.DATA_BASE)
 
-    con.query("SELECT VERSION()")
-    result = con.use_result()
-
-
-    print "SERVER : [OK] MySQL version: %s" % \
-        result.fetch_row()[0]
-
-except _mysql.Error, e:
-
-    print "SERVER : [ERROR] Error %d: %s" % (e.args[0], e.args[1])
-    print "SERVER : server stopped!"
-    con = False
-    sys.exit(1)
-
-finally:
-
-    if con:
-        con.close()
