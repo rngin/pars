@@ -35,12 +35,10 @@ def select():
 
     con = _mysql.connect(data.HOST, data.USER_NAME, data.PASSWORD, data.DATA_BASE)
 
-    with con:
+    con.cur = con.cursor()
+    con.cur.execute("SELECT * FROM opec_basket_price;")
 
-        cur = con.cursor()
-        cur.execute("SELECT * FROM opec_basket_price;")
+    rows = con.cur.fetchall()
 
-        rows = cur.fetchall()
-
-        for row in rows:
-            print row
+    for row in rows:
+        print row
