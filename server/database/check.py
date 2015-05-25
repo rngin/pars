@@ -32,7 +32,7 @@ def connect():
 
 def select():
 
-    con = _mysql.connect('localhost', 'testuser', 'test623', 'testdb');
+    con = _mysql.connect(data.HOST, data.USER_NAME, data.PASSWORD, data.DATA_BASE)
 
     with con:
 
