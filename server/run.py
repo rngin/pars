@@ -2,7 +2,7 @@
 
 __author__ = 'mohsen'
 
-print "starting server.."
+print "SERVER : [OK] starting server.."
 
 import _mysql
 import sys
@@ -17,12 +17,13 @@ try:
     result = con.use_result()
 
 
-    print "[OK] MySQL version: %s" % \
+    print "SERVER : [OK] MySQL version: %s" % \
         result.fetch_row()[0]
 
 except _mysql.Error, e:
 
-    print "[ERROR] Error %d: %s" % (e.args[0], e.args[1])
+    print "SERVER : [ERROR] Error %d: %s" % (e.args[0], e.args[1])
+    print "SERVER : server stopped!"
     sys.exit(1)
 
 finally:
