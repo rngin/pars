@@ -24,6 +24,7 @@ except _mysql.Error, e:
 
     print "SERVER : [ERROR] Error %d: %s" % (e.args[0], e.args[1])
     print "SERVER : server stopped!"
+    con = False
     sys.exit(1)
 
 finally:
