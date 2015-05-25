@@ -30,6 +30,7 @@ def connect():
         if con:
             con.close()
 
+
 def select():
 
     con = _mysql.connect(data.HOST, data.USER_NAME, data.PASSWORD, data.DATA_BASE)
@@ -37,7 +38,7 @@ def select():
     with con:
 
         cur = con.cursor()
-        cur.execute("SELECT * FROM opec_backet_price")
+        cur.execute("SELECT * FROM opec_basket_price")
 
         rows = cur.fetchall()
 
