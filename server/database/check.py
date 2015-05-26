@@ -37,4 +37,5 @@ def select():
 
     con.query("SELECT * FROM opec_basket_price")
     result = con.use_result()
+
     print result.fetch_row()[0]
